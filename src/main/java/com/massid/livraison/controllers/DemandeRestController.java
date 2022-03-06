@@ -56,5 +56,12 @@ public class DemandeRestController {
 		return this.demandeRepository.save(demande);
 	}
 	
+	//fonction pour rechercher les demande selon la date d'operation
+	@GetMapping("/sort/{date_operation}")
+	public List<Demande> getDemandeByDate(@PathVariable String date_operation){
+		return demandeRepository.findByDateOperation(date_operation);
+	}
+	
+	
 	
 }
